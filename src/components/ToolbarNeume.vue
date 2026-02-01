@@ -149,6 +149,83 @@
       <button
         class="neume-button"
         :disabled="expressionsDisabled"
+        :title="tooltip(VocalExpressionNeume.Piasma)"
+        @click="$emit('update:expression', VocalExpressionNeume.Piasma)"
+      >
+        <Neume
+          :neume="VocalExpressionNeume.Piasma"
+          :fontFamily="pageSetup.neumeDefaultFontFamily"
+        />
+      </button>
+      <button
+        class="neume-button"
+        :disabled="expressionsDisabled"
+        :title="tooltip(VocalExpressionNeume.Lygisma)"
+        @click="$emit('update:expression', VocalExpressionNeume.Lygisma)"
+      >
+        <Neume
+          :neume="VocalExpressionNeume.Lygisma"
+          :fontFamily="pageSetup.neumeDefaultFontFamily"
+        />
+      </button>
+      <button
+        class="neume-button"
+        :disabled="expressionsDisabled"
+        :title="tooltip(VocalExpressionNeume.Paraklitiki)"
+        @click="$emit('update:expression', VocalExpressionNeume.Paraklitiki)"
+      >
+        <Neume
+          :neume="VocalExpressionNeume.Paraklitiki"
+          :fontFamily="pageSetup.neumeDefaultFontFamily"
+        />
+      </button>
+      <button
+        class="neume-button"
+        :disabled="expressionsDisabled"
+        :title="tooltip(VocalExpressionNeume.Tromikon)"
+        @click="$emit('update:expression', VocalExpressionNeume.Tromikon)"
+      >
+        <Neume
+          :neume="VocalExpressionNeume.Tromikon"
+          :fontFamily="pageSetup.neumeDefaultFontFamily"
+        />
+      </button>
+      <button
+        class="neume-button"
+        :disabled="expressionsDisabled"
+        :title="tooltip(VocalExpressionNeume.Ekstrepton)"
+        @click="$emit('update:expression', VocalExpressionNeume.Ekstrepton)"
+      >
+        <Neume
+          :neume="VocalExpressionNeume.Ekstrepton"
+          :fontFamily="pageSetup.neumeDefaultFontFamily"
+        />
+      </button>
+      <button
+        class="neume-button"
+        :disabled="expressionsDisabled"
+        :title="tooltip(VocalExpressionNeume.Isaki)"
+        @click="$emit('update:expression', VocalExpressionNeume.Isaki)"
+      >
+        <Neume
+          :neume="VocalExpressionNeume.Isaki"
+          :fontFamily="pageSetup.neumeDefaultFontFamily"
+        />
+      </button>
+      <button
+        class="neume-button"
+        :disabled="expressionsDisabled"
+        :title="tooltip(VocalExpressionNeume.Naos)"
+        @click="$emit('update:expression', VocalExpressionNeume.Naos)"
+      >
+        <Neume
+          :neume="VocalExpressionNeume.Naos"
+          :fontFamily="pageSetup.neumeDefaultFontFamily"
+        />
+      </button>
+      <button
+        class="neume-button"
+        :disabled="expressionsDisabled"
         :title="tooltip(Tie.YfenBelow)"
         @click="$emit('update:tie', [Tie.YfenBelow, Tie.YfenAbove])"
       >
@@ -921,6 +998,30 @@ function getDisplayName(neume: Neume) {
       return 'model:neume.vocalExpression.connectingHomalon';
     case VocalExpressionNeume.Antikenoma:
       return 'model:neume.vocalExpression.antikenoma';
+    case VocalExpressionNeume.Psifiston:
+    case VocalExpressionNeume.PsifistonSlanted:
+      return 'model:neume.vocalExpression.psifiston';
+    case VocalExpressionNeume.Heteron:
+      return 'model:neume.vocalExpression.heteron';
+    case VocalExpressionNeume.HeteronConnecting:
+    case VocalExpressionNeume.HeteronConnectingLong:
+      return 'model:neume.vocalExpression.connectingHeteron';
+    case VocalExpressionNeume.Endofonon:
+      return 'model:neume.vocalExpression.endofonon';
+    case VocalExpressionNeume.Piasma:
+      return 'model:neume.vocalExpression.piasma';
+    case VocalExpressionNeume.Lygisma:
+      return 'model:neume.vocalExpression.lygisma';
+    case VocalExpressionNeume.Paraklitiki:
+      return 'model:neume.vocalExpression.paraklitiki';
+    case VocalExpressionNeume.Tromikon:
+      return 'model:neume.vocalExpression.tromikon';
+    case VocalExpressionNeume.Ekstrepton:
+      return 'model:neume.vocalExpression.ekstrepton';
+    case VocalExpressionNeume.Isaki:
+      return 'model:neume.vocalExpression.isaki';
+    case VocalExpressionNeume.Naos:
+      return 'model:neume.vocalExpression.naos';
     case VocalExpressionNeume.Psifiston:
       return 'model:neume.vocalExpression.psifiston';
     case VocalExpressionNeume.Heteron:

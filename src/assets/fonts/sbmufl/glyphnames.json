@@ -351,6 +351,27 @@
     "alternateCodepoint": "U+1D05A",
     "codepoint": "U+E0A1"
   },
+  "piasma": {
+    "codepoint": "U+1D059"
+  },
+  "lygisma": {
+    "codepoint": "U+1D05D"
+  },
+  "paraklitiki": {
+    "codepoint": "U+1D05E"
+  },
+  "tromikon": {
+    "codepoint": "U+1D063"
+  },
+  "ekstrepton": {
+    "codepoint": "U+1D064"
+  },
+  "isaki": {
+    "codepoint": "U+1D057"
+  },
+  "naos": {
+    "codepoint": "U+1D0BC"
+  },
   "antikenoma": {
     "alternateCodepoint": "U+1D05C",
     "codepoint": "U+E0A2"

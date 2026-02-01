@@ -1207,6 +1207,13 @@ export class ByzHtmlExporter {
     map.set('heteron', 'x-et');
     map.set('heteronConnecting', 'x-et-c');
     map.set('endofonon', 'x-endofonon');
+    map.set('piasma', 'x-piasma');
+    map.set('lygisma', 'x-lygisma');
+    map.set('paraklitiki', 'x-paraklitiki');
+    map.set('tromikon', 'x-tromikon');
+    map.set('ekstrepton', 'x-ekstrepton');
+    map.set('isaki', 'x-isaki');
+    map.set('naos', 'x-naos');
     map.set('yfenAbove', 'x-yfen-above');
     map.set('yfenBelow', 'x-yfen-below');
     map.set('stavros', 'x-stavros');

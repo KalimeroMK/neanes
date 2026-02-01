@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    ports:
+      - "5173:5173"
+      - "3344:3344"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - VITE_IS_ELECTRON=false

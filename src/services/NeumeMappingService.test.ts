@@ -65,4 +65,9 @@ describe('NeumeMappingsService', () => {
       expect(NeumeMappingService.getMapping(x)).toBeDefined(),
     );
   });
+
+  it('should map Piasma correctly', () => {
+    const mapping = NeumeMappingService.getMapping(VocalExpressionNeume.Piasma);
+    expect(mapping?.text).toBe('\u{1D059}');
+  });
 });

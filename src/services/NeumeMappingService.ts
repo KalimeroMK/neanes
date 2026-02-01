@@ -615,6 +615,13 @@ mapNeumeToSbmufl(
   'heteronConnecting.salt01',
 );
 mapNeumeToSbmufl(VocalExpressionNeume.Endofonon, 'endofonon');
+mapNeumeToSbmufl(VocalExpressionNeume.Piasma, 'piasma');
+mapNeumeToSbmufl(VocalExpressionNeume.Lygisma, 'lygisma');
+mapNeumeToSbmufl(VocalExpressionNeume.Paraklitiki, 'paraklitiki');
+mapNeumeToSbmufl(VocalExpressionNeume.Tromikon, 'tromikon');
+mapNeumeToSbmufl(VocalExpressionNeume.Ekstrepton, 'ekstrepton');
+mapNeumeToSbmufl(VocalExpressionNeume.Isaki, 'isaki');
+mapNeumeToSbmufl(VocalExpressionNeume.Naos, 'naos');
 
 mapNeumeToSbmufl(RootSign.Delta, 'martyriaDeltaBelow');
 mapNeumeToSbmufl(RootSign.Alpha, 'martyriaAlphaBelow');

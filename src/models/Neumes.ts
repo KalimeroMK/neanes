@@ -191,6 +191,13 @@ export enum VocalExpressionNeume {
   HeteronConnectingLong = 'HeteronConnectingLong',
   Endofonon = 'Endofonon',
   Cross_Top = 'Cross_Top',
+  Piasma = 'Piasma',
+  Lygisma = 'Lygisma',
+  Paraklitiki = 'Paraklitiki',
+  Tromikon = 'Tromikon',
+  Ekstrepton = 'Ekstrepton',
+  Isaki = 'Isaki',
+  Naos = 'Naos',
 }
 
 export enum RootSign {
