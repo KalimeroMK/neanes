@@ -146,6 +146,9 @@
       >
         <img src="@/assets/icons/quality-endofonon.svg" />
       </button>
+
+      <span class="separator"></span>
+
       <button
         class="neume-button"
         :disabled="expressionsDisabled"
@@ -157,6 +160,15 @@
           :fontFamily="pageSetup.neumeDefaultFontFamily"
         />
       </button>
+
+...
+
+.neume-toolbar {
+  min-width: 320px;
+}
+
+.row {
+  display: flex;
       <button
         class="neume-button"
         :disabled="expressionsDisabled"
