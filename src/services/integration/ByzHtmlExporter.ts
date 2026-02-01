@@ -177,11 +177,11 @@ export class ByzHtmlExporter {
 
         --byz-drop-cap-font-family: ${pageSetup.dropCapDefaultFontFamily};
         --byz-drop-cap-font-size: ${Unit.toPt(
-          pageSetup.dropCapDefaultFontSize,
-        )}pt;
+      pageSetup.dropCapDefaultFontSize,
+    )}pt;
         --byz-drop-cap-offset-v: ${Unit.toPt(
-          this.getDropCapAdjustment(pageSetup),
-        )}pt;
+      this.getDropCapAdjustment(pageSetup),
+    )}pt;
         --byz-drop-cap-color: ${pageSetup.dropCapDefaultColor};
 
         --byz-color-accidental: ${pageSetup.accidentalDefaultColor};
@@ -199,18 +199,18 @@ export class ByzHtmlExporter {
       
       body {
         margin: ${Unit.toPt(pageSetup.topMargin)}px ${Unit.toPt(
-          pageSetup.rightMargin,
-        )}px ${Unit.toPt(pageSetup.bottomMargin)}px ${Unit.toPt(
-          pageSetup.leftMargin,
-        )}px;
+      pageSetup.rightMargin,
+    )}px ${Unit.toPt(pageSetup.bottomMargin)}px ${Unit.toPt(
+      pageSetup.leftMargin,
+    )}px;
       }
 
       @page {
         margin: ${Unit.toPt(pageSetup.topMargin)}px ${Unit.toPt(
-          pageSetup.rightMargin,
-        )}px ${Unit.toPt(pageSetup.bottomMargin)}px ${Unit.toPt(
-          pageSetup.leftMargin,
-        )}px;
+      pageSetup.rightMargin,
+    )}px ${Unit.toPt(pageSetup.bottomMargin)}px ${Unit.toPt(
+      pageSetup.leftMargin,
+    )}px;
         size: ${pageSetup.pageSize} ${orientation}
       }
 
@@ -619,9 +619,8 @@ export class ByzHtmlExporter {
           `<${this.getTag('gorthmikon')}></${this.getTag('gorthmikon')}>`,
         );
 
-      inner += `<${this.config.tagLyric}>${lyrics}</${
-        this.config.tagLyric
-      }\n${this.getIndentationString(indentation)}>`;
+      inner += `<${this.config.tagLyric}>${lyrics}</${this.config.tagLyric
+        }\n${this.getIndentationString(indentation)}>`;
 
       if (
         !pageSetup.disableGreekMelismata &&
@@ -632,16 +631,13 @@ export class ByzHtmlExporter {
           ? ` ${this.config.attributeMelismaHyphen}`
           : '';
 
-        inner += `<${this.config.tagMelisma} ${
-          this.config.attributeMelismaAuto
-        }${hyphenAttribute}></${
-          this.config.tagMelisma
-        }\n${this.getIndentationString(indentation)}>`;
+        inner += `<${this.config.tagMelisma} ${this.config.attributeMelismaAuto
+          }${hyphenAttribute}></${this.config.tagMelisma
+          }\n${this.getIndentationString(indentation)}>`;
       }
     } else if (element.melismaText.trim() != '') {
-      inner += `<${this.config.tagLyric}>${element.melismaText}</${
-        this.config.tagLyric
-      }\n${this.getIndentationString(indentation)}>`;
+      inner += `<${this.config.tagLyric}>${element.melismaText}</${this.config.tagLyric
+        }\n${this.getIndentationString(indentation)}>`;
     }
 
     return `<${this.config.tagNote}\n${this.getIndentationString(
@@ -704,13 +700,12 @@ export class ByzHtmlExporter {
       styleAttribute = ` style="${style}"`;
     }
 
-    return `<${
-      this.config.tagMartyria
-    }${styleAttribute}${classAttribute}\n${this.getIndentationString(
-      indentation + 2,
-    )}>${inner}</${this.config.tagMartyria}\n${this.getIndentationString(
-      indentation,
-    )}>`;
+    return `<${this.config.tagMartyria
+      }${styleAttribute}${classAttribute}\n${this.getIndentationString(
+        indentation + 2,
+      )}>${inner}</${this.config.tagMartyria}\n${this.getIndentationString(
+        indentation,
+      )}>`;
   }
 
   exportDropCap(element: DropCapElement, indentation: number) {
@@ -732,9 +727,8 @@ export class ByzHtmlExporter {
       styleAttribute = ` style="${style}"`;
     }
 
-    return `<${this.config.tagDropCap}${styleAttribute}>${element.content}</${
-      this.config.tagDropCap
-    }\n${this.getIndentationString(indentation)}>`;
+    return `<${this.config.tagDropCap}${styleAttribute}>${element.content}</${this.config.tagDropCap
+      }\n${this.getIndentationString(indentation)}>`;
   }
 
   exportTempo(element: TempoElement, indentation: number) {
@@ -775,9 +769,8 @@ export class ByzHtmlExporter {
       className += ` ${this.config.classTextBoxInline}`;
     }
 
-    return `<div class="${className}"${styleAttribute}>${
-      element.content
-    }</div\n${this.getIndentationString(indentation)}>`;
+    return `<div class="${className}"${styleAttribute}>${element.content
+      }</div\n${this.getIndentationString(indentation)}>`;
   }
 
   exportRichTextBox(element: RichTextBoxElement, indentation: number) {
@@ -792,9 +785,8 @@ export class ByzHtmlExporter {
 
     styleAttribute = ` style="${style}"`;
 
-    return `<div class="${className}"${styleAttribute}>${
-      element.content
-    }</div\n${this.getIndentationString(indentation)}>`;
+    return `<div class="${className}"${styleAttribute}>${element.content
+      }</div\n${this.getIndentationString(indentation)}>`;
   }
 
   exportModeKey(element: ModeKeyElement, indentation: number) {
@@ -910,11 +902,10 @@ export class ByzHtmlExporter {
 
     styleAttribute = ` style="${style}"`;
 
-    return `<div class="${
-      this.config.classModeKey
-    }"${styleAttribute}\n${this.getIndentationString(
-      indentation + 2,
-    )}>${inner}</div\n${this.getIndentationString(indentation)}>`;
+    return `<div class="${this.config.classModeKey
+      }"${styleAttribute}\n${this.getIndentationString(
+        indentation + 2,
+      )}>${inner}</div\n${this.getIndentationString(indentation)}>`;
   }
 
   exportImageBox(element: ImageBoxElement, indentation: number) {
@@ -982,11 +973,9 @@ export class ByzHtmlExporter {
       nameAttribute = ` name=${tagInfo.glyphName}`;
     }
 
-    return `<${
-      tagInfo.tag
-    }${classAttribute}${styleAttribute}${saltAttribute}${nameAttribute}></${
-      tagInfo.tag
-    }\n${this.getIndentationString(indentation)}>`;
+    return `<${tagInfo.tag
+      }${classAttribute}${styleAttribute}${saltAttribute}${nameAttribute}></${tagInfo.tag
+      }\n${this.getIndentationString(indentation)}>`;
   }
 
   startPage(indentation: number, index: number, elements: ScoreElement[]) {
@@ -994,16 +983,14 @@ export class ByzHtmlExporter {
       ? ` ${this.config.classNeumeParagraphCenter}`
       : '';
 
-    return `<div class="${
-      this.config.classNeumeParagraph
-    }${center}"\n${this.getIndentationString(indentation)}>`;
+    return `<div class="${this.config.classNeumeParagraph
+      }${center}"\n${this.getIndentationString(indentation)}>`;
   }
 
   endPage(indentation: number, needLineBreak: boolean) {
     const lineBreak = needLineBreak
-      ? `<div class="${
-          this.config.classLineBreak
-        }"></div\n${this.getIndentationString(indentation + 2)}>`
+      ? `<div class="${this.config.classLineBreak
+      }"></div\n${this.getIndentationString(indentation + 2)}>`
       : '';
 
     return `${lineBreak}</div\n${this.getIndentationString(indentation)}>`;
@@ -1079,11 +1066,9 @@ export class ByzHtmlExporter {
       `${pageSetup.neumeDefaultFontSize}px ${pageSetup.neumeDefaultFontFamily}`,
     );
 
-    const font = `${pageSetup.dropCapDefaultFontStyle} normal ${
-      pageSetup.dropCapDefaultFontWeight
-    } ${pageSetup.dropCapDefaultFontSize}px/${
-      pageSetup.dropCapDefaultLineHeight ?? 'normal'
-    } "${pageSetup.dropCapDefaultFontFamily}"`;
+    const font = `${pageSetup.dropCapDefaultFontStyle} normal ${pageSetup.dropCapDefaultFontWeight
+      } ${pageSetup.dropCapDefaultFontSize}px/${pageSetup.dropCapDefaultLineHeight ?? 'normal'
+      } "${pageSetup.dropCapDefaultFontFamily}"`;
 
     const fontBoundingBoxDescent =
       TextMeasurementService.getFontBoundingBoxDescent(font);
@@ -1125,6 +1110,27 @@ export class ByzHtmlExporter {
     map.set('oligonElafron', 'x-o-e');
     map.set('oligonElafronApostrofos', 'x-o-ea');
     map.set('oligonChamili', 'x-o-ch');
+    map.set('oxeia', 'x-ox');
+    map.set('oxeiaKentimaMiddle', 'x-ox2-m');
+    map.set('oxeiaKentimaBelow', 'x-ox2');
+    map.set('oxeiaKentimaAbove', 'x-ox3');
+    map.set('oxeiaYpsiliRight', 'x-ox4');
+    map.set('oxeiaYpsiliLeft', 'x-ox5');
+    map.set('oxeiaKentimaYpsiliRight', 'x-ox6');
+    map.set('oxeiaKentimaYpsiliMiddle', 'x-ox7');
+    map.set('oxeiaDoubleYpsili', 'x-ox8');
+    map.set('oxeiaKentimataDoubleYpsili', 'x-ox9');
+    map.set('oxeiaKentimaDoubleYpsiliRight', 'x-ox10');
+    map.set('oxeiaKentimaDoubleYpsiliLeft', 'x-ox11');
+    map.set('oxeiaTripleYpsili', 'x-ox12');
+    map.set('oxeiaKentimataTripleYpsili', 'x-ox13');
+    map.set('oxeiaKentimaTripleYpsili', 'x-ox14');
+    map.set('oxeiaIson', 'x-ox-i');
+    map.set('oxeiaApostrofos', 'x-ox-a');
+    map.set('oxeiaYporroi', 'x-ox-y');
+    map.set('oxeiaElafron', 'x-ox-e');
+    map.set('oxeiaElafronApostrofos', 'x-ox-ea');
+    map.set('oxeiaChamili', 'x-ox-ch');
     map.set('isonApostrofos', 'x-i-a');
     map.set('apostrofos', 'x-a');
     map.set('apostrofosSyndesmos', 'x-aa');
@@ -1181,6 +1187,18 @@ export class ByzHtmlExporter {
     map.set('oligonRunningElafronKentimata', 'x-o-re-k');
     map.set('oligonElafronApostrofosKentimata', 'x-o-ea-k');
     map.set('oligonChamiliKentimata', 'x-o-ch-k');
+    map.set('oxeiaKentimataBelow', 'x-kox');
+    map.set('oxeiaKentimataAbove', 'x-oxk');
+    map.set('oxeiaIsonKentimata', 'x-ox-i-k');
+    map.set('oxeiaKentimaMiddleKentimata', 'x-ox2-m-k');
+    map.set('oxeiaYpsiliRightKentimata', 'x-ox4-k');
+    map.set('oxeiaYpsiliLeftKentimata', 'x-ox5-k');
+    map.set('oxeiaApostrofosKentimata', 'x-ox-a-k');
+    map.set('oxeiaYporroiKentimata', 'x-ox-y-k');
+    map.set('oxeiaElafronKentimata', 'x-ox-e-k');
+    map.set('oxeiaRunningElafronKentimata', 'x-ox-re-k');
+    map.set('oxeiaElafronApostrofosKentimata', 'x-ox-ea-k');
+    map.set('oxeiaChamiliKentimata', 'x-ox-ch-k');
     map.set('vareia', 'x-var');
     map.set('psifiston', 'x-psi');
     map.set('antikenoma', 'x-anti');
@@ -1451,6 +1469,7 @@ export class ByzHtmlExporter {
     map.set('modeOligonYpsili', 'x-mode-oligon-ypsili');
     map.set('modeElafron', 'x-mode-elafron');
     map.set('modeRunningElafron', 'x-mode-running-elafron');
+    map.set('modeOxeia', 'x-mode-oxeia');
     map.set('modePlagal', 'x-mode-plagal');
     map.set('modeWordEchos', 'x-mode-word-echos');
     map.set('modeWordVarys', 'x-mode-word-varys');

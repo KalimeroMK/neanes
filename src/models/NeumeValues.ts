@@ -18,6 +18,21 @@ const neumeValueMap = new Map<QuantitativeNeume, number>([
   [QuantitativeNeume.OligonKentimataTripleYpsili, 13],
   [QuantitativeNeume.OligonKentimaTripleYpsili, 14],
 
+  [QuantitativeNeume.Oxeia, 1],
+  [QuantitativeNeume.OxeiaPlusKentimaBelow, 2],
+  [QuantitativeNeume.OxeiaPlusKentimaAbove, 3],
+  [QuantitativeNeume.OxeiaPlusHypsiliRight, 4],
+  [QuantitativeNeume.OxeiaPlusHypsiliLeft, 5],
+  [QuantitativeNeume.OxeiaPlusHypsiliPlusKentimaHorizontal, 6],
+  [QuantitativeNeume.OxeiaPlusHypsiliPlusKentimaVertical, 7],
+  [QuantitativeNeume.OxeiaPlusDoubleHypsili, 8],
+  [QuantitativeNeume.OxeiaKentimataDoubleYpsili, 9],
+  [QuantitativeNeume.OxeiaKentimaDoubleYpsiliRight, 10],
+  [QuantitativeNeume.OxeiaKentimaDoubleYpsiliLeft, 11],
+  [QuantitativeNeume.OxeiaTripleYpsili, 12],
+  [QuantitativeNeume.OxeiaKentimataTripleYpsili, 13],
+  [QuantitativeNeume.OxeiaKentimaTripleYpsili, 14],
+
   [QuantitativeNeume.PetastiWithIson, 0],
   [QuantitativeNeume.Petasti, 1],
   [QuantitativeNeume.PetastiPlusOligon, 2],
@@ -70,10 +85,30 @@ const neumeValueMap = new Map<QuantitativeNeume, number>([
   [QuantitativeNeume.OligonPlusElaphronPlusApostrophosPlusKentemata, -2],
   [QuantitativeNeume.OligonPlusHamiliPlusKentemata, -3],
 
+  [QuantitativeNeume.OxeiaPlusKentemata, 2],
+  [QuantitativeNeume.KentemataPlusOxeia, 2],
+  [QuantitativeNeume.OxeiaPlusIsonPlusKentemata, 1],
+  [QuantitativeNeume.OxeiaPlusApostrophosPlusKentemata, 0],
+  [QuantitativeNeume.OxeiaPlusHyporoePlusKentemata, -1],
+  [QuantitativeNeume.OxeiaKentimaMiddleKentimata, 3],
+  [QuantitativeNeume.OxeiaPlusKentemataPlusHypsiliRight, 5],
+  [QuantitativeNeume.OxeiaPlusKentemataPlusHypsiliLeft, 6],
+  [QuantitativeNeume.OxeiaPlusElaphronPlusKentemata, -1],
+  [QuantitativeNeume.OxeiaPlusRunningElaphronPlusKentemata, -1],
+  [QuantitativeNeume.OxeiaPlusElaphronPlusApostrophosPlusKentemata, -2],
+  [QuantitativeNeume.OxeiaPlusHamiliPlusKentemata, -3],
+
   [QuantitativeNeume.RunningElaphron, -2],
   [QuantitativeNeume.Hyporoe, -2],
   [QuantitativeNeume.PetastiPlusRunningElaphron, -2],
   [QuantitativeNeume.PetastiPlusHyporoe, -2],
+
+  [QuantitativeNeume.OxeiaPlusIson, 0],
+  [QuantitativeNeume.OxeiaPlusApostrophos, -1],
+  [QuantitativeNeume.OxeiaPlusElaphron, -2],
+  [QuantitativeNeume.OxeiaPlusHyporoe, -2],
+  [QuantitativeNeume.OxeiaPlusElaphronPlusApostrophos, -3],
+  [QuantitativeNeume.OxeiaPlusHamili, -4],
 
   [QuantitativeNeume.OligonPlusIson, 0],
   [QuantitativeNeume.OligonPlusApostrophos, -1],
@@ -84,6 +119,7 @@ const neumeValueMap = new Map<QuantitativeNeume, number>([
 
   [QuantitativeNeume.Kentima, 2],
   [QuantitativeNeume.OligonPlusKentima, 2],
+  [QuantitativeNeume.OxeiaPlusKentima, 2],
   [QuantitativeNeume.Kentemata, 1],
 
   [QuantitativeNeume.DoubleApostrophos, -2],
@@ -109,10 +145,21 @@ export function getNoteSpread(neume: QuantitativeNeume) {
     case QuantitativeNeume.OligonPlusKentemataPlusHypsiliRight:
     case QuantitativeNeume.OligonPlusKentemata:
     case QuantitativeNeume.KentemataPlusOligon:
+    case QuantitativeNeume.OxeiaPlusHamiliPlusKentemata:
+    case QuantitativeNeume.OxeiaPlusIsonPlusKentemata:
+    case QuantitativeNeume.OxeiaPlusElaphronPlusKentemata:
+    case QuantitativeNeume.OxeiaPlusApostrophosPlusKentemata:
+    case QuantitativeNeume.OxeiaPlusElaphronPlusApostrophosPlusKentemata:
+    case QuantitativeNeume.OxeiaKentimaMiddleKentimata:
+    case QuantitativeNeume.OxeiaPlusKentemataPlusHypsiliLeft:
+    case QuantitativeNeume.OxeiaPlusKentemataPlusHypsiliRight:
+    case QuantitativeNeume.OxeiaPlusKentemata:
+    case QuantitativeNeume.KentemataPlusOxeia:
       return [-1, 0];
     case QuantitativeNeume.Hyporoe:
     case QuantitativeNeume.PetastiPlusHyporoe:
     case QuantitativeNeume.OligonPlusHyporoe:
+    case QuantitativeNeume.OxeiaPlusHyporoe:
     case QuantitativeNeume.DoubleApostrophos:
     case QuantitativeNeume.RunningElaphron:
     case QuantitativeNeume.PetastiPlusRunningElaphron:
@@ -120,6 +167,8 @@ export function getNoteSpread(neume: QuantitativeNeume) {
       return [1, 0];
     case QuantitativeNeume.OligonPlusRunningElaphronPlusKentemata:
     case QuantitativeNeume.OligonPlusHyporoePlusKentemata:
+    case QuantitativeNeume.OxeiaPlusRunningElaphronPlusKentemata:
+    case QuantitativeNeume.OxeiaPlusHyporoePlusKentemata:
       return [0, -1, 0];
     default:
       return [0];
@@ -136,6 +185,10 @@ export function getSpreadIndex(
     case QuantitativeNeume.OligonPlusKentemataPlusHypsiliLeft:
     case QuantitativeNeume.OligonPlusKentemataPlusHypsiliRight:
     case QuantitativeNeume.OligonPlusKentemata:
+    case QuantitativeNeume.OxeiaKentimaMiddleKentimata:
+    case QuantitativeNeume.OxeiaPlusKentemataPlusHypsiliLeft:
+    case QuantitativeNeume.OxeiaPlusKentemataPlusHypsiliRight:
+    case QuantitativeNeume.OxeiaPlusKentemata:
       if (neumeSelection === NeumeSelection.Primary) {
         if (fthora.endsWith('_Top')) {
           return 1;
@@ -145,7 +198,7 @@ export function getSpreadIndex(
           return -1; // Undefined
         }
       } else if (neumeSelection === NeumeSelection.Secondary) {
-        if (neume === QuantitativeNeume.OligonPlusKentemata) {
+        if (neume === QuantitativeNeume.OligonPlusKentemata || neume === QuantitativeNeume.OxeiaPlusKentemata) {
           return 0;
         } else {
           return -1; // Undefined
@@ -154,6 +207,7 @@ export function getSpreadIndex(
         return -1; // Undefined
       }
     case QuantitativeNeume.KentemataPlusOligon:
+    case QuantitativeNeume.KentemataPlusOxeia:
       if (neumeSelection === NeumeSelection.Primary) {
         return 1;
       } else if (neumeSelection === NeumeSelection.Secondary) {
@@ -192,6 +246,7 @@ export function getSpreadIndex(
         return -1; // Undefined
       }
     case QuantitativeNeume.OligonPlusRunningElaphronPlusKentemata:
+    case QuantitativeNeume.OxeiaPlusRunningElaphronPlusKentemata:
       if (neumeSelection == NeumeSelection.Primary) {
         return 2;
       } else if (neumeSelection === NeumeSelection.Secondary) {
@@ -200,6 +255,7 @@ export function getSpreadIndex(
         return 0;
       }
     case QuantitativeNeume.OligonPlusHyporoePlusKentemata:
+    case QuantitativeNeume.OxeiaPlusHyporoePlusKentemata:
       if (neumeSelection === NeumeSelection.Primary) {
         return 2;
       } else if (neumeSelection === NeumeSelection.Secondary) {

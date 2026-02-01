@@ -207,14 +207,25 @@ export class AnalysisService {
       case QuantitativeNeume.OligonPlusKentemataPlusHypsiliLeft:
       case QuantitativeNeume.OligonPlusKentemataPlusHypsiliRight:
       case QuantitativeNeume.OligonPlusKentemata:
+      case QuantitativeNeume.OxeiaPlusHamiliPlusKentemata:
+      case QuantitativeNeume.OxeiaPlusIsonPlusKentemata:
+      case QuantitativeNeume.OxeiaPlusElaphronPlusKentemata:
+      case QuantitativeNeume.OxeiaPlusApostrophosPlusKentemata:
+      case QuantitativeNeume.OxeiaPlusElaphronPlusApostrophosPlusKentemata:
+      case QuantitativeNeume.OxeiaKentimaMiddleKentimata:
+      case QuantitativeNeume.OxeiaPlusKentemataPlusHypsiliLeft:
+      case QuantitativeNeume.OxeiaPlusKentemataPlusHypsiliRight:
+      case QuantitativeNeume.OxeiaPlusKentemata:
         this.handleKentemataCombo(noteElement, noteAtomNodes, workspace);
         break;
       case QuantitativeNeume.KentemataPlusOligon:
+      case QuantitativeNeume.KentemataPlusOxeia:
         this.handleKentemataOligon(noteElement, noteAtomNodes, workspace);
         break;
       case QuantitativeNeume.Hyporoe:
       case QuantitativeNeume.PetastiPlusHyporoe:
       case QuantitativeNeume.OligonPlusHyporoe:
+      case QuantitativeNeume.OxeiaPlusHyporoe:
         this.handleHyporoe(noteElement, noteAtomNodes, workspace);
         break;
       case QuantitativeNeume.DoubleApostrophos:
@@ -226,6 +237,7 @@ export class AnalysisService {
         this.handleRunningElaphron(noteElement, noteAtomNodes, workspace);
         break;
       case QuantitativeNeume.OligonPlusRunningElaphronPlusKentemata:
+      case QuantitativeNeume.OxeiaPlusRunningElaphronPlusKentemata:
         this.handleRunningElaphronKentemata(
           noteElement,
           noteAtomNodes,
@@ -233,6 +245,7 @@ export class AnalysisService {
         );
         break;
       case QuantitativeNeume.OligonPlusHyporoePlusKentemata:
+      case QuantitativeNeume.OxeiaPlusHyporoePlusKentemata:
         this.handleHyporoeKentemata(noteElement, noteAtomNodes, workspace);
         break;
       case QuantitativeNeume.Breath:
@@ -242,6 +255,51 @@ export class AnalysisService {
       case QuantitativeNeume.VareiaDotted3:
       case QuantitativeNeume.VareiaDotted4:
         this.handleRest(noteElement, workspace);
+        break;
+      case QuantitativeNeume.Oligon:
+      case QuantitativeNeume.OligonPlusKentimaBelow:
+      case QuantitativeNeume.OligonPlusKentimaAbove:
+      case QuantitativeNeume.OligonPlusHypsiliRight:
+      case QuantitativeNeume.OligonPlusHypsiliLeft:
+      case QuantitativeNeume.OligonPlusHypsiliPlusKentimaHorizontal:
+      case QuantitativeNeume.OligonPlusHypsiliPlusKentimaVertical:
+      case QuantitativeNeume.OligonPlusDoubleHypsili:
+      case QuantitativeNeume.OligonKentimataDoubleYpsili:
+      case QuantitativeNeume.OligonKentimaDoubleYpsiliRight:
+      case QuantitativeNeume.OligonKentimaDoubleYpsiliLeft:
+      case QuantitativeNeume.OligonTripleYpsili:
+      case QuantitativeNeume.OligonKentimataTripleYpsili:
+      case QuantitativeNeume.OligonKentimaTripleYpsili:
+      case QuantitativeNeume.OligonPlusRunningElaphronPlusKentemata:
+      case QuantitativeNeume.OligonPlusHyporoePlusKentemata:
+      case QuantitativeNeume.Oxeia:
+      case QuantitativeNeume.OxeiaPlusKentimaBelow:
+      case QuantitativeNeume.OxeiaPlusKentimaAbove:
+      case QuantitativeNeume.OxeiaPlusHypsiliRight:
+      case QuantitativeNeume.OxeiaPlusHypsiliLeft:
+      case QuantitativeNeume.OxeiaPlusHypsiliPlusKentimaHorizontal:
+      case QuantitativeNeume.OxeiaPlusHypsiliPlusKentimaVertical:
+      case QuantitativeNeume.OxeiaPlusDoubleHypsili:
+      case QuantitativeNeume.OxeiaKentimataDoubleYpsili:
+      case QuantitativeNeume.OxeiaKentimaDoubleYpsiliRight:
+      case QuantitativeNeume.OxeiaKentimaDoubleYpsiliLeft:
+      case QuantitativeNeume.OxeiaTripleYpsili:
+      case QuantitativeNeume.OxeiaKentimataTripleYpsili:
+      case QuantitativeNeume.OxeiaKentimaTripleYpsili:
+      case QuantitativeNeume.OxeiaPlusRunningElaphronPlusKentemata:
+      case QuantitativeNeume.OxeiaPlusHyporoePlusKentemata:
+        this.handleDefault(noteElement, noteAtomNodes, workspace);
+        break;
+      case QuantitativeNeume.DoubleApostrophos:
+      case QuantitativeNeume.IsonPlusApostrophos:
+      case QuantitativeNeume.OxeiaPlusIson:
+      case QuantitativeNeume.OxeiaPlusApostrophos:
+      case QuantitativeNeume.OxeiaPlusElaphron:
+      case QuantitativeNeume.OxeiaPlusHyporoe:
+      case QuantitativeNeume.OxeiaPlusElaphronPlusApostrophos:
+      case QuantitativeNeume.OxeiaPlusHamili:
+      case QuantitativeNeume.OxeiaPlusKentima:
+        this.handleDefault(noteElement, noteAtomNodes, workspace);
         break;
       default:
         this.handleDefault(noteElement, noteAtomNodes, workspace);

@@ -7,6 +7,10 @@
     "alternateCodepoint": "U+1D047",
     "codepoint": "U+E001"
   },
+  "oxeia": {
+    "alternateCodepoint": "U+1D048",
+    "codepoint": "U+1D048"
+  },
   "oligonKentimaMiddle": {
     "codepoint": "U+E002"
   },
@@ -65,6 +69,66 @@
     "codepoint": "U+E014"
   },
   "oligonChamili": {
+    "codepoint": "U+E015"
+  },
+  "oxeiaKentimaMiddle": {
+    "codepoint": "U+E002"
+  },
+  "oxeiaKentimaBelow": {
+    "codepoint": "U+E003"
+  },
+  "oxeiaKentimaAbove": {
+    "codepoint": "U+E004"
+  },
+  "oxeiaYpsiliRight": {
+    "codepoint": "U+E005"
+  },
+  "oxeiaYpsiliLeft": {
+    "codepoint": "U+E006"
+  },
+  "oxeiaKentimaYpsiliRight": {
+    "codepoint": "U+E007"
+  },
+  "oxeiaKentimaYpsiliMiddle": {
+    "codepoint": "U+E008"
+  },
+  "oxeiaDoubleYpsili": {
+    "codepoint": "U+E009"
+  },
+  "oxeiaKentimataDoubleYpsili": {
+    "codepoint": "U+E00A"
+  },
+  "oxeiaKentimaDoubleYpsiliRight": {
+    "codepoint": "U+E00B"
+  },
+  "oxeiaKentimaDoubleYpsiliLeft": {
+    "codepoint": "U+E00C"
+  },
+  "oxeiaTripleYpsili": {
+    "codepoint": "U+E00D"
+  },
+  "oxeiaKentimataTripleYpsili": {
+    "codepoint": "U+E00E"
+  },
+  "oxeiaKentimaTripleYpsili": {
+    "codepoint": "U+E00F"
+  },
+  "oxeiaIson": {
+    "codepoint": "U+E010"
+  },
+  "oxeiaApostrofos": {
+    "codepoint": "U+E011"
+  },
+  "oxeiaYporroi": {
+    "codepoint": "U+E012"
+  },
+  "oxeiaElafron": {
+    "codepoint": "U+E013"
+  },
+  "oxeiaElafronApostrofos": {
+    "codepoint": "U+E014"
+  },
+  "oxeiaChamili": {
     "codepoint": "U+E015"
   },
   "isonApostrofos": {
@@ -241,6 +305,42 @@
     "codepoint": "U+E08C"
   },
   "oligonChamiliKentimata": {
+    "codepoint": "U+E08D"
+  },
+  "oxeiaKentimataBelow": {
+    "codepoint": "U+E082"
+  },
+  "oxeiaKentimataAbove": {
+    "codepoint": "U+E083"
+  },
+  "oxeiaIsonKentimata": {
+    "codepoint": "U+E084"
+  },
+  "oxeiaKentimaMiddleKentimata": {
+    "codepoint": "U+E085"
+  },
+  "oxeiaYpsiliRightKentimata": {
+    "codepoint": "U+E086"
+  },
+  "oxeiaYpsiliLeftKentimata": {
+    "codepoint": "U+E087"
+  },
+  "oxeiaApostrofosKentimata": {
+    "codepoint": "U+E088"
+  },
+  "oxeiaYporroiKentimata": {
+    "codepoint": "U+E089"
+  },
+  "oxeiaElafronKentimata": {
+    "codepoint": "U+E08A"
+  },
+  "oxeiaRunningElafronKentimata": {
+    "codepoint": "U+E08B"
+  },
+  "oxeiaElafronApostrofosKentimata": {
+    "codepoint": "U+E08C"
+  },
+  "oxeiaChamiliKentimata": {
     "codepoint": "U+E08D"
   },
   "vareia": {

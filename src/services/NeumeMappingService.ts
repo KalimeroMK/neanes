@@ -36,14 +36,18 @@ const glyphNameToCodepointMap = new Map<string, string>();
 
 for (const glyph in glyphnames) {
   const data: { codepoint: string } = (glyphnames as any)[glyph];
-  const codepoint = Number('0x' + data.codepoint.substring(2));
-  glyphNameToCodepointMap.set(glyph, String.fromCodePoint(codepoint));
+  const codepoints = data.codepoint
+    .split(' ')
+    .map((cp) => Number('0x' + cp.substring(2)));
+  glyphNameToCodepointMap.set(glyph, String.fromCodePoint(...codepoints));
 }
 
 for (const glyph in metadata.optionalGlyphs) {
   const data: { codepoint: string } = (metadata.optionalGlyphs as any)[glyph];
-  const codepoint = Number('0x' + data.codepoint.substring(2));
-  glyphNameToCodepointMap.set(glyph, String.fromCodePoint(codepoint));
+  const codepoints = data.codepoint
+    .split(' ')
+    .map((cp) => Number('0x' + cp.substring(2)));
+  glyphNameToCodepointMap.set(glyph, String.fromCodePoint(...codepoints));
 }
 
 function mapNeumeToSbmufl(
@@ -107,6 +111,51 @@ mapNeumeToSbmufl(
 mapNeumeToSbmufl(
   QuantitativeNeume.OligonKentimaTripleYpsili,
   'oligonKentimaTripleYpsili',
+);
+
+mapNeumeToSbmufl(QuantitativeNeume.Oxeia, 'oxeia');
+mapNeumeToSbmufl(
+  QuantitativeNeume.OxeiaPlusKentimaBelow,
+  'oxeiaKentimaBelow',
+);
+mapNeumeToSbmufl(
+  QuantitativeNeume.OxeiaPlusKentimaAbove,
+  'oxeiaKentimaAbove',
+);
+mapNeumeToSbmufl(QuantitativeNeume.OxeiaPlusHypsiliRight, 'oxeiaYpsiliRight');
+mapNeumeToSbmufl(QuantitativeNeume.OxeiaPlusHypsiliLeft, 'oxeiaYpsiliLeft');
+mapNeumeToSbmufl(
+  QuantitativeNeume.OxeiaPlusHypsiliPlusKentimaHorizontal,
+  'oxeiaKentimaYpsiliRight',
+);
+mapNeumeToSbmufl(
+  QuantitativeNeume.OxeiaPlusHypsiliPlusKentimaVertical,
+  'oxeiaKentimaYpsiliMiddle',
+);
+mapNeumeToSbmufl(
+  QuantitativeNeume.OxeiaPlusDoubleHypsili,
+  'oxeiaDoubleYpsili',
+);
+mapNeumeToSbmufl(
+  QuantitativeNeume.OxeiaKentimataDoubleYpsili,
+  'oxeiaKentimataDoubleYpsili',
+);
+mapNeumeToSbmufl(
+  QuantitativeNeume.OxeiaKentimaDoubleYpsiliRight,
+  'oxeiaKentimaDoubleYpsiliRight',
+);
+mapNeumeToSbmufl(
+  QuantitativeNeume.OxeiaKentimaDoubleYpsiliLeft,
+  'oxeiaKentimaDoubleYpsiliLeft',
+);
+mapNeumeToSbmufl(QuantitativeNeume.OxeiaTripleYpsili, 'oxeiaTripleYpsili');
+mapNeumeToSbmufl(
+  QuantitativeNeume.OxeiaKentimataTripleYpsili,
+  'oxeiaKentimataTripleYpsili',
+);
+mapNeumeToSbmufl(
+  QuantitativeNeume.OxeiaKentimaTripleYpsili,
+  'oxeiaKentimaTripleYpsili',
 );
 
 mapNeumeToSbmufl(QuantitativeNeume.PetastiWithIson, 'petastiIson');
@@ -228,6 +277,33 @@ mapNeumeToSbmufl(
   QuantitativeNeume.OligonPlusHamiliPlusKentemata,
   'oligonChamiliKentimata',
 );
+
+mapNeumeToSbmufl(QuantitativeNeume.OxeiaPlusKentemata, 'oxeiaKentimataAbove');
+mapNeumeToSbmufl(QuantitativeNeume.KentemataPlusOxeia, 'oxeiaKentimataBelow');
+mapNeumeToSbmufl(
+  QuantitativeNeume.OxeiaPlusIsonPlusKentemata,
+  'oxeiaIsonKentimata',
+);
+mapNeumeToSbmufl(
+  QuantitativeNeume.OxeiaPlusApostrophosPlusKentemata,
+  'oxeiaApostrofosKentimata',
+);
+mapNeumeToSbmufl(
+  QuantitativeNeume.OxeiaPlusHyporoePlusKentemata,
+  'oxeiaYporroiKentimata',
+);
+mapNeumeToSbmufl(
+  QuantitativeNeume.OxeiaPlusElaphronPlusKentemata,
+  'oxeiaElafronKentimata',
+);
+mapNeumeToSbmufl(
+  QuantitativeNeume.OxeiaPlusElaphronPlusApostrophosPlusKentemata,
+  'oxeiaElafronApostrofosKentimata',
+);
+mapNeumeToSbmufl(
+  QuantitativeNeume.OxeiaPlusHamiliPlusKentemata,
+  'oxeiaChamiliKentimata',
+);
 mapNeumeToSbmufl(QuantitativeNeume.RunningElaphron, 'runningElafron');
 mapNeumeToSbmufl(QuantitativeNeume.Hyporoe, 'yporroi');
 mapNeumeToSbmufl(
@@ -243,13 +319,30 @@ mapNeumeToSbmufl(
   QuantitativeNeume.OligonPlusElaphronPlusApostrophos,
   'oligonElafronApostrofos',
 );
-mapNeumeToSbmufl(QuantitativeNeume.OligonPlusHamili, 'oligonChamili');
+mapNeumeToSbmufl(
+  QuantitativeNeume.OligonPlusHamili,
+  'oligonChamili',
+);
+mapNeumeToSbmufl(QuantitativeNeume.OxeiaPlusIson, 'oxeiaIson');
+mapNeumeToSbmufl(QuantitativeNeume.OxeiaPlusApostrophos, 'oxeiaApostrofos');
+mapNeumeToSbmufl(QuantitativeNeume.OxeiaPlusElaphron, 'oxeiaElafron');
+mapNeumeToSbmufl(QuantitativeNeume.OxeiaPlusHyporoe, 'oxeiaYporroi');
+mapNeumeToSbmufl(
+  QuantitativeNeume.OxeiaPlusElaphronPlusApostrophos,
+  'oxeiaElafronApostrofos',
+);
+mapNeumeToSbmufl(QuantitativeNeume.OxeiaPlusHamili, 'oxeiaChamili');
 mapNeumeToSbmufl(QuantitativeNeume.Kentima, 'kentima');
 mapNeumeToSbmufl(QuantitativeNeume.OligonPlusKentima, 'oligonKentimaMiddle');
+mapNeumeToSbmufl(QuantitativeNeume.OxeiaPlusKentima, 'oxeiaKentimaMiddle');
 mapNeumeToSbmufl(QuantitativeNeume.Kentemata, 'kentimata');
 mapNeumeToSbmufl(
   QuantitativeNeume.OligonPlusRunningElaphronPlusKentemata,
   'oligonRunningElafronKentimata',
+);
+mapNeumeToSbmufl(
+  QuantitativeNeume.OxeiaPlusRunningElaphronPlusKentemata,
+  'oxeiaRunningElafronKentimata',
 );
 mapNeumeToSbmufl(QuantitativeNeume.DoubleApostrophos, 'apostrofosSyndesmos');
 mapNeumeToSbmufl(QuantitativeNeume.IsonPlusApostrophos, 'isonApostrofos');
@@ -264,6 +357,19 @@ mapNeumeToSbmufl(
 mapNeumeToSbmufl(
   QuantitativeNeume.OligonPlusKentemataPlusHypsiliRight,
   'oligonYpsiliRightKentimata',
+);
+
+mapNeumeToSbmufl(
+  QuantitativeNeume.OxeiaKentimaMiddleKentimata,
+  'oxeiaKentimaMiddleKentimata',
+);
+mapNeumeToSbmufl(
+  QuantitativeNeume.OxeiaPlusKentemataPlusHypsiliLeft,
+  'oxeiaYpsiliLeftKentimata',
+);
+mapNeumeToSbmufl(
+  QuantitativeNeume.OxeiaPlusKentemataPlusHypsiliRight,
+  'oxeiaYpsiliRightKentimata',
 );
 mapNeumeToSbmufl(QuantitativeNeume.Cross, 'stavros');
 mapNeumeToSbmufl(QuantitativeNeume.Breath, 'breath');

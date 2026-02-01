@@ -411,6 +411,21 @@ const ascendingNeumes: QuantitativeNeume[] = [
   QuantitativeNeume.OligonTripleYpsili,
   QuantitativeNeume.OligonKentimataTripleYpsili,
   QuantitativeNeume.OligonKentimaTripleYpsili,
+  QuantitativeNeume.Oxeia,
+  QuantitativeNeume.OxeiaPlusKentima,
+  QuantitativeNeume.OxeiaPlusKentimaBelow,
+  QuantitativeNeume.OxeiaPlusKentimaAbove,
+  QuantitativeNeume.OxeiaPlusHypsiliRight,
+  QuantitativeNeume.OxeiaPlusHypsiliLeft,
+  QuantitativeNeume.OxeiaPlusHypsiliPlusKentimaHorizontal,
+  QuantitativeNeume.OxeiaPlusHypsiliPlusKentimaVertical,
+  QuantitativeNeume.OxeiaPlusDoubleHypsili,
+  QuantitativeNeume.OxeiaKentimataDoubleYpsili,
+  QuantitativeNeume.OxeiaKentimaDoubleYpsiliRight,
+  QuantitativeNeume.OxeiaKentimaDoubleYpsiliLeft,
+  QuantitativeNeume.OxeiaTripleYpsili,
+  QuantitativeNeume.OxeiaKentimataTripleYpsili,
+  QuantitativeNeume.OxeiaKentimaTripleYpsili,
 ];
 
 const ascendingNeumesWithPetasti: QuantitativeNeume[] = [
@@ -482,6 +497,24 @@ const combinationNeumes: QuantitativeNeume[] = [
   QuantitativeNeume.OligonPlusHyporoe,
   QuantitativeNeume.OligonPlusElaphronPlusApostrophos,
   QuantitativeNeume.OligonPlusHamili,
+  QuantitativeNeume.OxeiaPlusKentemata,
+  QuantitativeNeume.KentemataPlusOxeia,
+  QuantitativeNeume.OxeiaPlusIsonPlusKentemata,
+  QuantitativeNeume.OxeiaKentimaMiddleKentimata,
+  QuantitativeNeume.OxeiaPlusKentemataPlusHypsiliRight,
+  QuantitativeNeume.OxeiaPlusKentemataPlusHypsiliLeft,
+  QuantitativeNeume.OxeiaPlusApostrophosPlusKentemata,
+  QuantitativeNeume.OxeiaPlusElaphronPlusKentemata,
+  QuantitativeNeume.OxeiaPlusRunningElaphronPlusKentemata,
+  QuantitativeNeume.OxeiaPlusHyporoePlusKentemata,
+  QuantitativeNeume.OxeiaPlusElaphronPlusApostrophosPlusKentemata,
+  QuantitativeNeume.OxeiaPlusHamiliPlusKentemata,
+  QuantitativeNeume.OxeiaPlusIson,
+  QuantitativeNeume.OxeiaPlusApostrophos,
+  QuantitativeNeume.OxeiaPlusElaphron,
+  QuantitativeNeume.OxeiaPlusHyporoe,
+  QuantitativeNeume.OxeiaPlusElaphronPlusApostrophos,
+  QuantitativeNeume.OxeiaPlusHamili,
 ];
 
 const secondaryGorgonMenuItems: SecondaryGorgonMenuItem[] = [
@@ -708,7 +741,7 @@ export default defineComponent({
     },
 
     tooltip(neume: QuantitativeNeume) {
-      const displayName = this.getDisplayName(neume);
+      const displayName = this.getDisplayName(neume) || '';
       const mapping = this.neumeKeyboard.findMappingForNeume(neume);
       if (mapping) {
         return `${this.$t(displayName)} (${this.neumeKeyboard.generateTooltip(
@@ -725,29 +758,54 @@ export default defineComponent({
           return 'model:neume.quantitative.ison';
         case QuantitativeNeume.Oligon:
           return 'model:neume.quantitative.oligon';
+        case QuantitativeNeume.Oxeia:
+          return 'model:neume.quantitative.oxeia';
         case QuantitativeNeume.OligonPlusKentima:
         case QuantitativeNeume.OligonPlusKentimaBelow:
         case QuantitativeNeume.OligonPlusKentimaAbove:
           return 'model:neume.quantitative.oligonWithKentima';
+        case QuantitativeNeume.OxeiaPlusKentima:
+        case QuantitativeNeume.OxeiaPlusKentimaBelow:
+        case QuantitativeNeume.OxeiaPlusKentimaAbove:
+          return 'model:neume.quantitative.oxeiaWithKentima';
         case QuantitativeNeume.OligonPlusHypsiliRight:
         case QuantitativeNeume.OligonPlusHypsiliLeft:
           return 'model:neume.quantitative.oligonWithYpsili';
+        case QuantitativeNeume.OxeiaPlusHypsiliRight:
+        case QuantitativeNeume.OxeiaPlusHypsiliLeft:
+          return 'model:neume.quantitative.oxeiaWithYpsili';
         case QuantitativeNeume.OligonPlusHypsiliPlusKentimaHorizontal:
         case QuantitativeNeume.OligonPlusHypsiliPlusKentimaVertical:
           return 'model:neume.quantitative.oligonWithYpsiliAndKentima';
+        case QuantitativeNeume.OxeiaPlusHypsiliPlusKentimaHorizontal:
+        case QuantitativeNeume.OxeiaPlusHypsiliPlusKentimaVertical:
+          return 'model:neume.quantitative.oxeiaWithYpsiliAndKentima';
         case QuantitativeNeume.OligonPlusDoubleHypsili:
           return 'model:neume.quantitative.oligonWithDoubleYpsili';
+        case QuantitativeNeume.OxeiaPlusDoubleHypsili:
+          return 'model:neume.quantitative.oxeiaWithDoubleYpsili';
         case QuantitativeNeume.OligonKentimataDoubleYpsili:
           return 'model:neume.quantitative.oligonWithKentimataAndDoubleYpsili';
+        case QuantitativeNeume.OxeiaKentimataDoubleYpsili:
+          return 'model:neume.quantitative.oxeiaWithKentimataAndDoubleYpsili';
         case QuantitativeNeume.OligonKentimaDoubleYpsiliRight:
         case QuantitativeNeume.OligonKentimaDoubleYpsiliLeft:
           return 'model:neume.quantitative.oligonWithKentimaAndDoubleYpsili';
+        case QuantitativeNeume.OxeiaKentimaDoubleYpsiliRight:
+        case QuantitativeNeume.OxeiaKentimaDoubleYpsiliLeft:
+          return 'model:neume.quantitative.oxeiaWithKentimaAndDoubleYpsili';
         case QuantitativeNeume.OligonTripleYpsili:
           return 'model:neume.quantitative.oligonWithTripleYpsili';
+        case QuantitativeNeume.OxeiaTripleYpsili:
+          return 'model:neume.quantitative.oxeiaWithTripleYpsili';
         case QuantitativeNeume.OligonKentimataTripleYpsili:
           return 'model:neume.quantitative.oligonWithKentimataAndTripleYpsili';
+        case QuantitativeNeume.OxeiaKentimataTripleYpsili:
+          return 'model:neume.quantitative.oxeiaWithKentimataAndTripleYpsili';
         case QuantitativeNeume.OligonKentimaTripleYpsili:
           return 'model:neume.quantitative.oligonWithKentimaAndTripleYpsili';
+        case QuantitativeNeume.OxeiaKentimaTripleYpsili:
+          return 'model:neume.quantitative.oxeiaWithKentimaAndTripleYpsili';
         case QuantitativeNeume.PetastiWithIson:
           return 'model:neume.quantitative.petastiWithIson';
         case QuantitativeNeume.Petasti:

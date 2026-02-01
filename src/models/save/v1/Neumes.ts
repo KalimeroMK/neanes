@@ -96,6 +96,44 @@ export enum QuantitativeNeume {
   VareiaDotted4 = 'VareiaDotted4',
   Cross = 'Cross',
   Breath = 'Breath',
+  Oxeia = 'Oxeia',
+  OxeiaPlusKentimaBelow = 'OxeiaPlusKentimaBelow',
+  OxeiaPlusKentimaAbove = 'OxeiaPlusKentimaAbove',
+  OxeiaPlusHypsiliRight = 'OxeiaPlusHypsiliRight',
+  OxeiaPlusHypsiliLeft = 'OxeiaPlusHypsiliLeft',
+  OxeiaPlusHypsiliPlusKentimaHorizontal = 'OxeiaPlusHypsiliPlusKentimaHorizontal',
+  OxeiaPlusHypsiliPlusKentimaVertical = 'OxeiaPlusHypsiliPlusKentimaVertical',
+  OxeiaPlusDoubleHypsili = 'OxeiaPlusDoubleHypsili',
+
+  OxeiaKentimataDoubleYpsili = 'OxeiaKentimataDoubleYpsili',
+  OxeiaKentimaDoubleYpsiliRight = 'OxeiaKentimaDoubleYpsiliRight',
+  OxeiaKentimaDoubleYpsiliLeft = 'OxeiaKentimaDoubleYpsiliLeft',
+  OxeiaTripleYpsili = 'OxeiaTripleYpsili',
+  OxeiaKentimataTripleYpsili = 'OxeiaKentimataTripleYpsili',
+  OxeiaKentimaTripleYpsili = 'OxeiaKentimaTripleYpsili',
+
+  OxeiaPlusKentemata = 'OxeiaPlusKentemata',
+  KentemataPlusOxeia = 'KentemataPlusOxeia',
+  OxeiaPlusIsonPlusKentemata = 'OxeiaPlusIsonPlusKentemata',
+  OxeiaPlusApostrophosPlusKentemata = 'OxeiaPlusApostrophosPlusKentemata',
+  OxeiaPlusHyporoePlusKentemata = 'OxeiaPlusHyporoePlusKentemata',
+  OxeiaPlusElaphronPlusKentemata = 'OxeiaPlusElaphronPlusKentemata',
+  OxeiaPlusElaphronPlusApostrophosPlusKentemata = 'OxeiaPlusElaphronPlusApostrophosPlusKentemata',
+  OxeiaPlusHamiliPlusKentemata = 'OxeiaPlusHamiliPlusKentemata',
+
+  OxeiaPlusIson = 'OxeiaPlusIson',
+  OxeiaPlusApostrophos = 'OxeiaPlusApostrophos',
+  OxeiaPlusElaphron = 'OxeiaPlusElaphron',
+  OxeiaPlusHyporoe = 'OxeiaPlusHyporoe',
+  OxeiaPlusElaphronPlusApostrophos = 'OxeiaPlusElaphronPlusApostrophos',
+  OxeiaPlusHamili = 'OxeiaPlusHamili',
+
+  OxeiaPlusKentima = 'OxeiaPlusKentima',
+
+  OxeiaPlusRunningElaphronPlusKentemata = 'OxeiaPlusRunningElaphronPlusKentemata',
+  OxeiaKentimaMiddleKentimata = 'OxeiaKentimaMiddleKentimata',
+  OxeiaPlusKentemataPlusHypsiliLeft = 'OxeiaPlusKentemataPlusHypsiliLeft',
+  OxeiaPlusKentemataPlusHypsiliRight = 'OxeiaPlusKentemataPlusHypsiliRight',
 }
 
 export enum TimeNeume {
