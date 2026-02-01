@@ -9,3 +9,11 @@ services:
       - /app/node_modules
     environment:
       - VITE_IS_ELECTRON=false
+    container_name: nevmi-app
+    networks:
+      - default
+      - cloudflared
+
+networks:
+  cloudflared:
+    external: true
